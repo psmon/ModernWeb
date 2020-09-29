@@ -1,0 +1,24 @@
+version: '3.4'
+ 
+services:
+  webnori.admin-api:
+    image: ${DOCKER_REGISTRY-}admin-api
+    build:
+      context: .
+      dockerfile: ../Admin/Dockerfile    
+    links:
+      - "webnori.admin-front:admin-front"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Alpha
+    ports:
+      - 5001:5000
+    depends_on:
+      - webnori.admin-front
+
+  webnori.admin-front:
+    image: webnori-admin-front:dev    
+    ports:
+      - "4201:4200" 
+      - "49153:49153"
+
+      
