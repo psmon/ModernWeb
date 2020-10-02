@@ -3,13 +3,12 @@
 
 # Angular 셋팅
 
-## WSL 준비
 
-    윈도우 환경이라면 리눅스개발환경을 위해 WSL2를 준비합니다.
-    
-    WSL2 : http://wiki.webnori.com/pages/viewpage.action?pageId=43516098
+## Node JS/NPM 준비 (Windows or Lilux)
 
-## Node JS 준비
+    NPM은 플랫폼 상관없음으로, 각각 자신의 OS에서 사용할수 있는 방법사용합니다.
+
+    Native : https://nodejs.org/ko/
 
     Ubuntu 18.04 기준
    
@@ -35,3 +34,34 @@
 
     docker run --publish 4201:4200 --name webnori-admin-front:dev
     
+## Simple 듀토리얼
+
+CoreAPI WeatherForecastController 에 대응하는 샘플입니다.
+
+components/service/models 등을 네임스페이스로 구분합니다.
+
+특히 components는 여러가지 템플릿이 조합됨으로 컴포넌트별 디렉토리구분합니다.
+    
+    # UI Component 생성
+    ng generate component ./components/weatherforecast
+
+    # UI가 사용할 서비스 추가
+    ng generate service ./services/weatherforecast
+
+    # 모델
+    ng g class ./models/Weather --type=model
+
+과제 : http://localhost:5000/api/weatherforecast/  API에 대응하는 UI 컴포넌트를 작성해보세요~
+    
+
+## API 서버 실행
+
+    로컬개발시, 프론트개발자는 API(백엔드)를 띄워 프론트 연동개발이 가능합니다.
+    HotReload(코드수정시 브라우저반영)를 지원합니다.
+
+    set ASPNETCORE_ENVIRONMENT=Development    
+    dotnet run --project ./Admin/Admin.csproj --no-launch-profile
+
+    link : https://docs.microsoft.com/ko-kr/dotnet/core/tools/dotnet-run
+    
+

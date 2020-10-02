@@ -15,10 +15,42 @@
 API와 Front를 분리개발하는 최근 활용되고 있는 모던한 웹 개발방식으로
 언어및 플랫폼 조합구성을 자유롭게 진행할수 있습니다.
 
-유연한 레고 개발
-- 백엔드 API를 특정 프레임워크로 변경 가능.
-- 반대로 Front 프레임워크 교체 가능.
-- 기능 개발을 먼저하고, UI프레임워크는 나중에 결정할수도 있습니다.
+ex>
+- API를 SpringBoot(JAVA)로 변경가능하고
+- 반대로 Front를 쉽게 교체도 가능합니다. 이것은 각기다른 언어를 인정하는 MSA의 지향점과도 일치합니다.
+- 하지만 궁극적인 이점은, API 기능 개발을 먼저하고 Front를 이후에 적용할수도 있습니다.
+
+## Application LayOut
+![이미지](Doc/AppLayOut.png)
+
+    root
+        Admin : Admin API 프로젝트로 .net core api 작성되어짐
+        Front : 순수 프론트 코드만 존재하며 Angular.js로  작성되어짐
+
+백엔드와 프론트의 역활이 비슷한 구성요소의 네임스페이스를 
+다음과 같이 단일화 하였으며, 어드민 도메인 기능을 작동하기 위한
+핵심 구성 요소입니다.
+
+- Repositories : 데이터베이스 컬렉션을 흉내내는 조회를포함, CRUD 수행하는 객체입니다. (레파지토리 패턴을 추천)
+- Models : Entity,원격으로 주고받는 데이터 전송객체등 순수 모델을 정의한 객체입니다. (POJO,POCO) 
+- Services : 주로 Stateless한 기능을 제공하며, 다양한 어댑터를 활용하거나 포함할수 있습니다.
+- Components : UI를 표현하는 Html/CSS가 포함된 컴포넌트이며, Service를 이용하여 상호작용(UX) 합니다.
+
+
+## Hexagoanl
+![이미지](Doc/hexagonal_style-1.jpg)
+
+궁극적으로 지향하는 전체시스템의 클린 아키텍쳐는, 헥사고널 입니다. 
+
+어댑터를 사용하여 육각형으로 연동되는 클린 아키텍쳐로, 
+
+전통적으로 백엔드와 프론트라는 수직적 관계 형성이 아닌, 특정 프론트조차 헥사고날의 하나로서
+
+수평적으로 상대의 어댑터와 연동되어 확장될수 있는 컨셉입니다.
+
+이것이 의미하는 숨은 의미는, 프론트 개발역시 OOP(TS)를 활용하여,표준적인 패턴(DI등)을 사용하고 
+
+수준있는 어플리케이션을 구성해야 함을 의미합니다.  
 
 
 ### 분리에따른 웹리소스 빌드 - WebPack
@@ -29,11 +61,6 @@ API와 Front를 분리개발하는 최근 활용되고 있는 모던한 웹 개�
 - 최종목표는 리소스를 압축하고 단일화하여 네트워크 트래픽을 줄임과 동시에 성능 최적화의 목적을 가지고 있습니다.
 - 모던 웹(Angula/Vue/React)에서 Webpack을 활용한 CLI툴이 사용됩니다.
 
-## Application LayOut
-
-    root
-      Admin : Admin API 프로젝트로 .net core api 작성되어짐
-      Front : 순수 프론트 코드만 존재하며 Angular.js로  작성됨
 
 # 로컬 실행편
 
@@ -86,7 +113,7 @@ Proxy를 백엔드/프론트 어느지점에서 더 유리한지는 각각 다�
 
 ## FRONT
 
-    internal-admin\Front\frontend> 에서수행
+    Front\frontend> 에서수행
 
     docker build -f Dockerfile --force-rm -t webnori-admin-front:dev .
 
@@ -125,12 +152,11 @@ Tip : 도메인이 같더라도 포트가 다르면 크로스도메인입니다.
 독립적으로 각각 기능개선을 할수있습니다.
 
 
-## 플랫폼을 선택하는데 도움을 준 링크
+## 어플리케이션 레이아웃을 구성하는데 도움을 준 링크
 
 단일 시스템으로 작성된것을, 분리하여 개발하는 것은 협업방법과 함께
-일반적으로 더 섬세한 데브옵스 기술수준이 요구됩니다.
-아래 기술 아티컬을 읽어보시는 것을 권장합니다.
-
+일반적으로 더 섬세한 기술수준이 요구됩니다.
+이 프로젝트 참여시 아래 기술 아티컬을 읽어보시는 것을 권장합니다.
 
 참고링크 : 이 구성을 완성하기위해 참조가된 아티클
 
@@ -141,7 +167,9 @@ Tip : 도메인이 같더라도 포트가 다르면 크로스도메인입니다.
 - 웹팩 : https://nesoy.github.io/articles/2019-02/Webpack
 - 웹팩+angular : https://developer.okta.com/blog/2019/12/09/angular-webpack
 - SPA : https://docs.microsoft.com/en-us/aspnet/core/client-side/spa/angular?view=aspnetcore-3.1&tabs=visual-studio
-- 
+- 헥사고널 아키텍쳐 : https://herbertograca.com/2017/11/16/explicit-architecture-01-ddd-hexagonal-onion-clean-cqrs-how-i-put-it-all-together/
+- 유비쿼터스 언어 : https://medium.com/dtevangelist/msa-%EC%97%90%EC%84%9C-%EC%9C%A0%EB%B9%84%EC%BF%BC%ED%84%B0%EC%8A%A4-%EC%96%B8%EC%96%B4-%EB%B3%B4%ED%8E%B8-%EC%96%B8%EC%96%B4-%EC%9D%98-%EC%A4%91%EC%9A%94%EC%84%B1-ca22b96aaeea
+
 
 
 ## 기술지원
