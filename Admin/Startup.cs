@@ -1,4 +1,5 @@
 using Admin.Config;
+using Admin.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -22,6 +23,8 @@ namespace Admin
             services.AddControllers();
 
             services.AddSingleton(Configuration.GetSection("AppSettings").Get<AppSettings>());// * AppSettings
+
+            services.AddSingleton<WeatherForecastService>();
 
             services.AddMvc();
         }
