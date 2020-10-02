@@ -62,6 +62,8 @@ components/service/models 등을 네임스페이스로 구분합니다.
     set ASPNETCORE_ENVIRONMENT=Development    
     dotnet run --project ./Admin/Admin.csproj --no-launch-profile
 
+    api : http://localhost:5000/api/weatherforecast/
+
     link : https://docs.microsoft.com/ko-kr/dotnet/core/tools/dotnet-run
     
 

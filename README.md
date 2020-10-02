@@ -167,6 +167,7 @@ Tip : 도메인이 같더라도 포트가 다르면 크로스도메인입니다.
 - 웹팩 : https://nesoy.github.io/articles/2019-02/Webpack
 - 웹팩+angular : https://developer.okta.com/blog/2019/12/09/angular-webpack
 - SPA : https://docs.microsoft.com/en-us/aspnet/core/client-side/spa/angular?view=aspnetcore-3.1&tabs=visual-studio
+- SPA+NETCORE : https://www.infoq.com/articles/spa-asp-dotnet-core-3/
 - 헥사고널 아키텍쳐 : https://herbertograca.com/2017/11/16/explicit-architecture-01-ddd-hexagonal-onion-clean-cqrs-how-i-put-it-all-together/
 - 유비쿼터스 언어 : https://medium.com/dtevangelist/msa-%EC%97%90%EC%84%9C-%EC%9C%A0%EB%B9%84%EC%BF%BC%ED%84%B0%EC%8A%A4-%EC%96%B8%EC%96%B4-%EB%B3%B4%ED%8E%B8-%EC%96%B8%EC%96%B4-%EC%9D%98-%EC%A4%91%EC%9A%94%EC%84%B1-ca22b96aaeea
 
