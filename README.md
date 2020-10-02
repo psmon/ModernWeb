@@ -152,12 +152,11 @@ Tip : 도메인이 같더라도 포트가 다르면 크로스도메인입니다.
 독립적으로 각각 기능개선을 할수있습니다.
 
 
-## 플랫폼을 선택하는데 도움을 준 링크
+## 어플리케이션 레이아웃을 구성하는데 도움을 준 링크
 
 단일 시스템으로 작성된것을, 분리하여 개발하는 것은 협업방법과 함께
-일반적으로 더 섬세한 데브옵스 기술수준이 요구됩니다.
-아래 기술 아티컬을 읽어보시는 것을 권장합니다.
-
+일반적으로 더 섬세한 기술수준이 요구됩니다.
+이 프로젝트 참여시 아래 기술 아티컬을 읽어보시는 것을 권장합니다.
 
 참고링크 : 이 구성을 완성하기위해 참조가된 아티클
 
@@ -168,7 +167,9 @@ Tip : 도메인이 같더라도 포트가 다르면 크로스도메인입니다.
 - 웹팩 : https://nesoy.github.io/articles/2019-02/Webpack
 - 웹팩+angular : https://developer.okta.com/blog/2019/12/09/angular-webpack
 - SPA : https://docs.microsoft.com/en-us/aspnet/core/client-side/spa/angular?view=aspnetcore-3.1&tabs=visual-studio
-- 
+- 헥사고널 아키텍쳐 : https://herbertograca.com/2017/11/16/explicit-architecture-01-ddd-hexagonal-onion-clean-cqrs-how-i-put-it-all-together/
+- 유비쿼터스 언어 : https://medium.com/dtevangelist/msa-%EC%97%90%EC%84%9C-%EC%9C%A0%EB%B9%84%EC%BF%BC%ED%84%B0%EC%8A%A4-%EC%96%B8%EC%96%B4-%EB%B3%B4%ED%8E%B8-%EC%96%B8%EC%96%B4-%EC%9D%98-%EC%A4%91%EC%9A%94%EC%84%B1-ca22b96aaeea
+
 
 
 ## 기술지원
