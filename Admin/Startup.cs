@@ -1,4 +1,5 @@
 using Admin.Config;
+using Admin.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -22,6 +23,8 @@ namespace Admin
             services.AddControllers();
 
             services.AddSingleton(Configuration.GetSection("AppSettings").Get<AppSettings>());// * AppSettings
+
+            services.AddSingleton<WeatherForecastService>();
 
             services.AddMvc();
         }
@@ -52,7 +55,7 @@ namespace Admin
                 {
                     // To learn more about options for serving an Angular SPA from ASP.NET Core,
                     // see https://go.microsoft.com/fwlink/?linkid=864501
-                    spa.Options.SourcePath = "ClientApp";
+                    //spa.Options.SourcePath = "ClientApp";
                     spa.UseProxyToSpaDevelopmentServer(appSettings.ClientProxy);
                 });
             }
