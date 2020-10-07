@@ -171,7 +171,9 @@ Tip : 도메인이 같더라도 포트가 다르면 크로스도메인입니다.
 - 헥사고널 아키텍쳐 : https://herbertograca.com/2017/11/16/explicit-architecture-01-ddd-hexagonal-onion-clean-cqrs-how-i-put-it-all-together/
 - 유비쿼터스 언어 : https://medium.com/dtevangelist/msa-%EC%97%90%EC%84%9C-%EC%9C%A0%EB%B9%84%EC%BF%BC%ED%84%B0%EC%8A%A4-%EC%96%B8%EC%96%B4-%EB%B3%B4%ED%8E%B8-%EC%96%B8%EC%96%B4-%EC%9D%98-%EC%A4%91%EC%9A%94%EC%84%B1-ca22b96aaeea
 
+## WIKI
 
+WIKI : http://wiki.webnori.com/pages/viewpage.action?pageId=43516033
 
 ## 기술지원
 
@@ -181,6 +183,6 @@ Tip : 도메인이 같더라도 포트가 다르면 크로스도메인입니다.
 
 여기서 연구되는 자료는 실제 개발팀에서 MSA 모던한 웹서비스 개발에서 활용하고 있으며
 
-관심있는 개발자는 아래 링크를 통해 지원가능합니다. ( Vue/React/Angular중 하나에 자신있으신분 )
+관심있는 개발자는 아래 링크를 통해 지원가능합니다. ( Vue/React/Angular중 하나에 자신있으신분, NetCore(Asp.net) or JAVA 백엔드개발에 관심있으신분  )
 
 [지원GOGO](https://lunasoft.co.kr/home/main/page/company/recruit)
